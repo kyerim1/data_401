@@ -1,0 +1,22 @@
+#slider {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+#bus {
+    width: 300%;
+    height: 100%;
+}
+.slide {
+    position: relative;
+    float: left;
+    width: calc(100% / 3);
+    height: 100%;
+}
+.slide img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+}
