@@ -151,26 +151,26 @@
 //  주사위는 던져 졌다.   주사위의 숫자 무엇인지 맞추시오.
 //  내가 입력한 숫자가 주사위의 숫자와 같다면  정답,  같지않다면  손목 이라고 출력
 
-var dice = Math.floor(Math.random()*6  )+1  ;
+// var dice = Math.floor(Math.random()*6  )+1  ;
 
-var user = inputNum("1~6중에 하나만입력");
+// var user = inputNum("1~6중에 하나만입력");
 
-if( user == dice ){
-    document.write(" 정답 "+ dice);
-}else {
-    document.write("손목");
-}
+// if( user == dice ){
+//     document.write(" 정답 "+ dice);
+// }else {
+//     document.write("손목");
+// }
 
 
-function inputNum(str){
-    var a= prompt(str);
-    while( isNaN(a) ){
-        alert("숫자만 입력 가능합니다.");
-        a=prompt(str);
-    }
-    a=Number(a);
-    return a;
-}
+// function inputNum(str){
+//     var a= prompt(str);
+//     while( isNaN(a) ){
+//         alert("숫자만 입력 가능합니다.");
+//         a=prompt(str);
+//     }
+//     a=Number(a);
+//     return a;
+// }
 
 /*
     주차장 요금 계산
@@ -182,5 +182,23 @@ function inputNum(str){
     8시간 이상 주차시 무조건 5000원
 
     주차한 시간이 총몇분인가 입력하여  요금 출력하기
-
 */
+
+var time = Number(prompt(" 주차 시간 "));
+var cost=1000;
+
+if( time >= 480){
+    cost=5000;
+    time = 0;
+}else if( time >= 240){
+    cost=2500;
+    time = time -240;
+}else if(time >= 120 ){
+    cost=1500;
+    time = time - 120;
+}else{
+    time= time<40 ? 0 : time-30;
+}
+
+var price = cost + ( parseInt(time/10) * 100);
+document.write("주차요금 : " +price);
